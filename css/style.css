@@ -1,146 +1,124 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
 
-* {
-    box-sizing: border-box;
+body {
+  font-family: 'Quicksand', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-body {
-    font-family: 'Quicksand', sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  header h1 {
-    font-size: 36px;
-  }
-  
-  header p {
-    font-size: 18px;
-  }
-  
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 36px;
+}
+
+header p {
+  font-size: 18px;
+}
+
+main {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+section {
+  flex-basis: calc(33.33% - 20px); /* Three equal-width columns with 20px spacing between them */
+  margin-bottom: 30px;
+}
+
+section h2 {
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+aside {
+  background-color: #f1f1f1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: calc(33.33% - 20px); /* On larger screens, the aside will take one-third of the width */
+  margin-top: 30px; /* Add some spacing between the main content and aside */
+}
+
+#photo {
+  margin-top: 30px;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+#social {
+  margin-top: 30px;
+  text-align: center;
+}
+
+#social div {
+  display: flex;
+  justify-content: center;
+}
+
+#social img {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px; /* Add spacing between the icons */
+}
+
+/* Additional responsive styles */
+@media screen and (max-width: 800px) {
   main {
-    padding: 20px;
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  section {
-    flex-basis: calc(33.33% - 20px); /* Three equal-width columns with 20px spacing between them */
-    margin-bottom: 30px;
-  }
-  
-  section h2 {
-    border-bottom: 2px solid #333;
-    padding-bottom: 5px;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  li {
-    margin-bottom: 5px;
-  }
-  
-  aside {
-    background-color: #f1f1f1;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  #photo-slider {
-    margin-top: 30px;
-    text-align: center;
-  }
-  
-  .slider-container {
-    display: flex;
-    overflow: hidden;
-    max-height: 200px; /* Adjust the max height to fit your photos */
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .slider-container img {
-    width: 100%;
-    height: auto;
-    opacity: 0;
-    transition: opacity 1s;
-  }
-  
-  .slider-container img.active {
-    opacity: 1;
-  }
-  
-  
-  img {
-    max-width: 100%;
-    border-radius: 50%;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  #social {
-    margin-top: 30px;
-    text-align: center;
-  }
-  
-  #social div {
-    display: flex;
-    justify-content: center;
-  }
-  
-  #social a {
-    width: 50px;
-    height: 50px;
-    margin: 0 5px;
-  }
-  
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
     padding: 10px;
   }
-  
-  /* Responsive styles */
-  @media screen and (max-width: 800px) {
-    main {
-      padding: 10px;
-    }
-  
-    section {
-      flex-basis: 100%; 
-    }
-  }
-  
-  @media screen and (max-width: 600px) {
-    header h1 {
-      font-size: 28px;
-    }
-  
-    header p {
-      font-size: 16px;
-    }
+
+  section {
+    flex-basis: 100%; /* Full width for sections on smaller screens */
   }
 
-  @media screen and (max-width: 600px) {
-    .slider-container {
-      max-height: 150px;
-    }
+  aside {
+    flex-basis: 100%; /* Full width for the aside on smaller screens */
+    margin-top: 20px; /* Adjust spacing for the aside on smaller screens */
   }
+}
+
+@media screen and (max-width: 600px) {
+  header h1 {
+    font-size: 28px;
+  }
+
+  header p {
+    font-size: 16px;
+  }
+
+  .slider-container {
+    max-height: 150px;
+  }
+
+  #social img {
+    width: 25px;
+    height: 25px;
+  }
+}
